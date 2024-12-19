@@ -1,0 +1,15 @@
+/* 顺时针30度-缩小0.9倍 */
+@keyframes rotate-30-scale-90 {
+	0% {
+		transform: rotate(0deg) scale(1);
+	}
+	50% {
+		transform: rotate(30deg) scale(0.9);
+	}
+	100% {
+		transform: rotate(0deg) scale(1);
+	}
+}
+.animate-rotate-30-scale-90 {
+	animation: rotate-30-scale-90 5s infinite;
+}
