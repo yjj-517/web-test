@@ -3,12 +3,12 @@ import React from "react";
 // loading提示的加载组件
 import lazyLoad from "@/router/utils/lazy-load";
 // 导航路由组件
-// import Layout from "@/layout/home-layout/index";
+import Layout from "@/layout/index";
 import { RouteObject } from "@/router/interface";
 
 const ArrsRouter: Array<RouteObject> = [
 	{
-		// element: <Layout />, //导航
+		element: <Layout />, //导航
 		children: [
 			{
 				path: "/home",

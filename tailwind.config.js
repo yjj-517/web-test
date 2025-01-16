@@ -4,7 +4,7 @@ export default {
 	theme: {
 		// fontFamily
 		fontFamily: {
-			primary: "Oswald",
+			primary: "Oswald,Arial",
 			arial: "var(--sm-font-family-1)",
 		},
 		// screens
@@ -27,10 +27,10 @@ export default {
 			},
 			// 颜色
 			colors: {
-				primary: "#000000", //主色
-				regular: "var(--sm-color-fg-1)", //常规色
+				primary: "#87cd00", //主色
+				regular: "#00b4cd", //常规色
 				secondary: "", //次要色
-				disabled: "", //禁用色
+				disabled: "#ff99ff", //禁用色
 				// background-color
 				bgcolor: {
 					100: "#ffffff",

@@ -14,13 +14,7 @@ export const accountStores = create(
 		set => ({
 			userToken: "", //user-token
 			userInfo: {
-				addresses: [], //绑定钱包账号
-				agree_status: 1, //未同意协议/1未/2同意
 				nickname: "", //用户名
-				sdk_uid: "", //用户UID
-				email: "", //email
-				avatar: "", //头像地址
-				avatarImg: "", //处理后的头像地址
 			}, //用户信息
 			// 登录成功存储用户信息
 			addUser: (token: any, user: any) => {
@@ -29,39 +23,12 @@ export const accountStores = create(
 					userInfo: {
 						...state.userInfo,
 						...user, //登录用户信息
-						avatarImg: import.meta.env.VITE_BASE_DOWNLOAD + "/" + user.avatar,
 					},
-				}));
-			},
-			// 重新获取用户信息
-			editUser: (user: any) => {
-				set((state: any) => ({
-					userInfo: {
-						...state.userInfo,
-						...user, //登录用户信息
-						avatarImg: import.meta.env.VITE_BASE_DOWNLOAD + "/" + user.avatar,
-					},
-				}));
-			},
-			// 退出删除用户信息
-			delUser: () => {
-				set((state: any) => ({
-					userToken: "", //清空token
-					userInfo: {
-						...state.userInfo,
-						addresses: [], //绑定钱包账号
-						agree_status: 1, //未同意协议/1未/2同意
-						nickname: "", //用户名
-						sdk_uid: "", //用户UID
-						email: "", //email
-						avatar: "", //头像地址
-						avatarImg: "", //处理后的头像地址
-					}, // 将 userInfo 设置为空对象
 				}));
 			},
 		}),
 		{
-			name: "sim-account01", // 存储的键名
+			name: "account01", // 存储的键名
 			storage: createJSONStorage(() => localStorage), // 使用 localStorage 作为存储介质
 		},
 	),
