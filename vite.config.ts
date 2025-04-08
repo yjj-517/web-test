@@ -5,6 +5,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import svgr from "vite-plugin-svgr"; //svg
 import { nodePolyfills } from "vite-plugin-node-polyfills";
+import tailwindcss from "@tailwindcss/vite";
 
 //  nodePolyfills-- 配置
 const polyfillsPlugin = nodePolyfills({
@@ -30,6 +31,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 	return {
 		plugins: [
 			react(),
+			tailwindcss(),
 			svgr({
 				include: "**/*.svg?react",
 			}),

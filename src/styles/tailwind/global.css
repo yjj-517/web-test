@@ -1,19 +1,14 @@
 @layer base {
-	:root {
-		/* 字体 */
-		--sm-font-family-1: Arial;
-		/* theme-color */
-		--sm-color-fg-1: red;
-		--sm-color-fg-2: yellow;
-		/* layout-sider-宽度 */
-		--sm-account-sider-width: 240px;
-	}
 	/* 滚动条 */
 	.trove-scrollbar {
 		overflow-y: auto;
 		overflow-x: auto;
 		scrollbar-width: thin;
-		scrollbar-color: var(--sm-color-fg-1) var(--sm-color-fg-2);
+		scrollbar-color: var(--color-primary) var(--color-disabled);
+	}
+	.bb {
+		color: var(text-primary);
+		font-size: 60px;
 	}
 }
 /* 居中盒子 */
