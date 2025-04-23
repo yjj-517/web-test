@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import svgr from "vite-plugin-svgr"; //svg
 import { nodePolyfills } from "vite-plugin-node-polyfills";
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from "@tailwindcss/vite"; //tailwindcss
 
 //  nodePolyfills-- 配置
 const polyfillsPlugin = nodePolyfills({
@@ -31,10 +31,10 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 	return {
 		plugins: [
 			react(),
-			tailwindcss(),
 			svgr({
 				include: "**/*.svg?react",
 			}),
+			tailwindcss(), //tailwindcss
 			polyfillsPlugin, // polyfillsPlugin
 		],
 		//  开发或生产环境服务的公共基础路径,默认"/"
@@ -67,7 +67,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			cors: true, // 允许跨域
 			proxy: {
 				"/api": {
-					target: "api", //本地开发实际请求地址 http://192.168.10
+					target: "https://dev-api.simsports.io", //本地开发实际请求地址 http://192.168.10
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, ""),
 				},
