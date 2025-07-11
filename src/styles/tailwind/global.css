@@ -6,32 +6,47 @@
 	/* --alpha 规范颜色的透明度 */
 
 	:root {
-		--header-width: 100px;
+		/* layout-header-height */
+		--sm-layout-header-height: 3.5rem;
+		/* layout-footer-height */
+		--sm-layout-footer-height: 15rem;
+		/* layout-height */
+		--sm-layout-height: 16rem;
 	}
 	/* h3标签 */
-	h3 {
-		@apply text-center text-yellow-400;
+	h2 {
+		@apply font-bold;
 	}
 	/* 滚动条 */
 	.trove-scrollbar {
 		overflow-y: auto;
 		overflow-x: auto;
 		scrollbar-width: thin;
-		scrollbar-color: --alpha(var(--color-regular) / 80%) var(--color-primary);
+		scrollbar-color: --alpha(var(--color-bgcolor-200) / 80%) var(--color-bgcolor-100);
 	}
 }
 
 /* 自定义公共组件和公共样式 */
 @layer components {
+	/* 布局 */
+	/* 居中盒子 */
+	section.main {
+		@apply w-full max-w-7xl mx-auto relative px-4 md:px-8 lg:px-12 overflow-hidden;
+	}
+	/* 按钮 */
 	/* 主要按钮 */
 	button.primary-button {
-		@apply text-blue-300;
+		@apply cursor-pointer flex justify-center items-center gap-1 rounded-lg font-primary font-medium bg-linear-to-r from-primary to-regular text-white;
 	}
 }
 
 /* 自定义实用程序添加到您的项目中 */
+/* flex-居中 */
 @utility flex-center {
 	@apply flex justify-center items-center;
+}
+@utility flex-between {
+	@apply flex justify-between items-center;
 }
 
 /* 还有许多指令可在官网自行学习 */

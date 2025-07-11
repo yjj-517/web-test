@@ -11,3 +11,12 @@ select:-webkit-autofill {
 	background-image: none;
 	transition: background-color 50000s ease-in-out 0s;
 }
+/* 隐藏input框的type为number的控制按钮 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}

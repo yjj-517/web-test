@@ -3,57 +3,57 @@
 /* 引入tailwind-css */
 @import "tailwindcss";
 /* 引入或者自定义深色模式 */
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant warm (&:where([data-theme=warm], [data-theme=warm] *));
 
 /* 添加或者重置项目的自定义设计标记 */
+/* 使用 --属性-*： initial 完全禁用所有默认值并定义默认值 */
+/* 使用 --属性-*： 属性值 自定义或者覆盖默认值 */
 @theme {
-	/* 使用 --属性-*： initial 完全禁用所有默认值并定义默认值 */
-	/* 使用 --属性-*： 属性值 自定义或者覆盖默认值 */
-
-	/* responsive-design  */
-	--breakpoint-*: initial;
-	--breakpoint-sm: 480px;
-	--breakpoint-md: 768px;
-	--breakpoint-lg: 976px;
-	--breakpoint-xl: 1440px;
-
 	/* family */
-	--font-primary: Arial;
+	--font-primary: "Onest", sans-serif, Arial;
+	--font-regular: "Noto Sans", sans-serif, Arial;
 
 	/* color */
-	--color-primary: #87cd00;
-	--color-regular: #00b4cd;
-	--color-secondary: ;
-	--color-disabled: #ff99ff;
-
-	/* 定义动画关键帧 */
-	--animate-fade-in-scale: fade-in-scale 0.3s ease-out;
-	@keyframes fade-in-scale {
-		0% {
-			opacity: 0;
-			transform: scale(0.95);
-		}
-		100% {
-			opacity: 1;
-			transform: scale(1);
-		}
-	}
+	--color-primary: #bb00ff;
+	--color-regular: #2b7fff;
+	--color-secondary: #00c37a;
+	--color-disabled: #ff4d8b;
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-	*,
-	::after,
-	::before,
-	::backdrop,
-	::file-selector-button {
-		border-color: var(--color-gray-200, currentcolor);
+/* 多版本主题配置 */
+@layer theme {
+	/* 默认版本 */
+	:root {
+		--font-family-primary: var(--font-primary);
+		--color-bgcolor-01: red;
+		--color-text-01: yellow;
 	}
+	/* dark */
+	:root[data-theme="dark"] {
+		--color-bgcolor-01: blue;
+		--color-text-01: red;
+	}
+	/* warm */
+	:root[data-theme="warm"] {
+		--color-bgcolor-01: #ffe8e9;
+		--color-text-01: yellow;
+	}
+	/* 多语言切换字体 */
+	:root[lang="zh"] {
+		--font-family-primary: var(--font-regular);
+	}
+}
+@theme inline {
+	--color-bgcolor-100: var(--color-bgcolor-01);
+	--color-text-100: var(--color-text-01);
+	--font-family: var(--font-family-primary);
+}
+/* 主题设置 */
+html,
+body {
+	font-family: var(--font-family);
+	background-color: var(--color-bgcolor-100);
+	color: var(--color-text-100);
 }

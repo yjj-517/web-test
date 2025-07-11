@@ -67,7 +67,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			cors: true, // 允许跨域
 			proxy: {
 				"/api": {
-					target: "https://dev-api.simsports.io", //本地开发实际请求地址 http://192.168.10
+					target: "http://localhost:8020/", //本地开发实际请求地址 http://192.168.10
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, ""),
 				},

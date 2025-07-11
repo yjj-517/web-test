@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { type FC } from "react";
 // 懒加载模式的写法，外面需要套一层loading提示的加载组件
 // {Element} Comp 需要访问的组件
 import "./lazy-load.css";

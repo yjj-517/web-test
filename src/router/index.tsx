@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRoutes, Navigate, useLocation } from "react-router-dom";
-import { RouteObject } from "react-router-dom";
+import type { RouteObject } from "react-router-dom";
 // 定义模块化路由
 export const routeModuleList: RouteObject[] = [];
 // 导入所有router

@@ -1,0 +1,22 @@
+{
+	"lang": {
+		"name": "English",
+		"type": "en"
+	},
+	"layout": {
+		"tagline": "BaguaAI – Free AI Fortune Telling: Online Predictions for Love, Career & Destiny",
+		"copyright": "© Copyright 2025 BaGuaAI. All Rights Reserved."
+	},
+	"userInformation": {
+		"privacyPolicy": "Privacy Policy",
+		"termsOfUse": "Terms of Use"
+	},
+	"exception": {
+		"title": "Page not found",
+		"description": "The page you are looking for doesn't exist or another error occurred"
+	},
+	"home": {
+		"title": "EN欢迎来到 Tarotap",
+		"description": "EN多语言示例页面。"
+	}
+}

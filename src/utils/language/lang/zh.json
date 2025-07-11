@@ -1,0 +1,22 @@
+{
+	"lang": {
+		"name": "中文",
+		"type": "zh"
+	},
+	"layout": {
+		"tagline": "BaguaAI — 免费AI智能占卜，在线预言爱情、事业与运势",
+		"copyright": "© Copyright 2025 BaGuaAI. 版权所有."
+	},
+	"userInformation": {
+		"privacyPolicy": "隐私政策",
+		"termsOfUse": "服务条款"
+	},
+	"exception": {
+		"title": "页面找不到了",
+		"description": "您访问的页面可能已被删除，或链接地址有误"
+	},
+	"home": {
+		"title": "欢迎来到 Tarotap",
+		"description": "多语言示例页面。"
+	}
+}

@@ -4,7 +4,7 @@ import React from "react";
 import lazyLoad from "@/router/utils/lazy-load";
 // 导航路由组件
 import Layout from "@/layout/index";
-import { RouteObject } from "@/router/interface";
+import type { RouteObject } from "@/router/interface";
 import { Navigate } from "react-router-dom";
 
 const ArrsRouter: Array<RouteObject> = [
